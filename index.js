@@ -1,4 +1,7 @@
-var MOVE = new Buffer('1b5b3130303044', 'hex').toString();
+var MOVE =
+  (Buffer.from && Buffer.from !== Uint8Array.from ?
+	  Buffer.from('1b5b3130303044', 'hex') :
+    new Buffer('1b5b3130303044', 'hex')).toString();
 
 var write = process.stdout.write;
 var str;
